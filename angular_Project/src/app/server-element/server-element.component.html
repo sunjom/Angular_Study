@@ -1,0 +1,10 @@
+<div
+    class="panel panel-default">
+    <div class="panel-heading" #heading>{{ name }}</div>
+    <div class="panel-body">
+        <!-- react의 children같은 느낌. -->
+         <!-- selector에 부모의 class값을 넣어 이용하며 ng-content를 여러개 사용할 수 있다. -->
+          <!-- 만약 selector가 없다면 선택되지 않은 콘텐츠를 받는다. -->
+        <ng-content></ng-content>
+    </div>
+</div>

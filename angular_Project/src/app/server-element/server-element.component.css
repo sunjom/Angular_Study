@@ -1,0 +1,9 @@
+/* 실행된 코드를 살펴보면 _ngcontent-ejo-1 ,2 , 3... 이런식으로 컴포넌트 별로 있다 */
+/* 이걸 통해 CSS가 개별적으로 꾸며주는 것. */
+p{
+    color:blue;
+}
+
+label{
+    color:red;
+}

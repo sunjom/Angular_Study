@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- $event => BlueprintCreate.emit({...})에 의해 전달된 
+   {ServerName: string, ServerContent: string}객체값. -->
+  <app-cockpit 
+  (ServerCreate)="onServerAdded($event)"
+  (bpCreate)="onBlueAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!--ngFor을 통해 serverElements수 만큼 <app-server-element>호출. -->
+        <button class="btn btn-danger" (click)="onDestoryFisrt()">Destory Fisrt</button>
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+      <app-server-element 
+      *ngFor="let serverElement of serverElements" 
+      [element]="serverElement"
+      [name]="serverElement.name">
+        <p #contentPage>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
