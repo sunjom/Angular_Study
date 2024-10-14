@@ -1,0 +1,8 @@
+<app-card>
+    <!-- css내부에 있는 .Active가 true일 경우 구현됨. -->
+    <button [class.active]="selected" (click)="onSelectUser()">
+        <!-- get으로 선언된 함수를 호출했기 때문에 이렇게 사용 가능. -->
+        <img [src]="imgPath"/>
+        <span>{{user.name}}</span>
+    </button>
+</app-card>

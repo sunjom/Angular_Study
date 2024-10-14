@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<main>
+  <ul id="users">
+    <!-- track => react의 key역할. -->
+    @for (user of users; track user.id) {
+      <li>
+        <app-user 
+          [user] = "user"
+          [selected]="user.id === selectedUserId"
+          (select)="onSelectUser($event)"
+        ></app-user>
+      </li> 
+    }
+  </ul>
+  @if (selectedUserId) {
+    <app-tasks [userId]="SelectedUser.id" [name]="SelectedUser.name"/>
+  }@else {
+    <p id="fallback">Select a user to see</p>
+  }
+</main>
